@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BankModelStoreContainer" CdmEntityContainer="BankEntities">
+    <EntitySetMapping Name="Admins">
+      <EntityTypeMapping TypeName="BankModel.Admin">
+        <MappingFragment StoreEntitySet="Admin">
+          <ScalarProperty Name="PSNo" ColumnName="PSNo" />
+          <ScalarProperty Name="AdminName" ColumnName="AdminName" />
+          <ScalarProperty Name="Admin_Password" ColumnName="Admin_Password" />
+          <ScalarProperty Name="Contact_No" ColumnName="Contact_No" />
+          <ScalarProperty Name="AdminEmail" ColumnName="AdminEmail" />
+          <ScalarProperty Name="Acc_Status" ColumnName="Acc_Status" />
+          <ScalarProperty Name="Login_Attempts" ColumnName="Login_Attempts" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Beneficiaries">
+      <EntityTypeMapping TypeName="BankModel.Beneficiary">
+        <MappingFragment StoreEntitySet="Beneficiary">
+          <ScalarProperty Name="Ben_AccNo" ColumnName="Ben_AccNo" />
+          <ScalarProperty Name="User_AccNo" ColumnName="User_AccNo" />
+          <ScalarProperty Name="Ben_Name" ColumnName="Ben_Name" />
+          <ScalarProperty Name="Ben_NickName" ColumnName="Ben_NickName" />
+          <ScalarProperty Name="Ben_Banktype" ColumnName="Ben_Banktype" />
+          <ScalarProperty Name="IFSC_code" ColumnName="IFSC_code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IFSCs">
+      <EntityTypeMapping TypeName="BankModel.IFSC">
+        <MappingFragment StoreEntitySet="IFSC">
+          <ScalarProperty Name="Branch_Name" ColumnName="Branch_Name" />
+          <ScalarProperty Name="IFSC_code" ColumnName="IFSC_code" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sessions">
+      <EntityTypeMapping TypeName="BankModel.Session">
+        <MappingFragment StoreEntitySet="Session">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Acc_No" ColumnName="Acc_No" />
+          <ScalarProperty Name="Session_Login" ColumnName="Session_Login" />
+          <ScalarProperty Name="Session_Logout" ColumnName="Session_Logout" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Transfer_Details_All">
+      <EntityTypeMapping TypeName="BankModel.Transfer_Details_All">
+        <MappingFragment StoreEntitySet="Transfer_Details_All">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+          <ScalarProperty Name="Acc_No" ColumnName="Acc_No" />
+          <ScalarProperty Name="Ben_AccNo" ColumnName="Ben_AccNo" />
+          <ScalarProperty Name="Transaction_Type" ColumnName="Transaction_Type" />
+          <ScalarProperty Name="Transaction_date" ColumnName="Transaction_date" />
+          <ScalarProperty Name="Maturity_Ins" ColumnName="Maturity_Ins" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="Withdraw" ColumnName="Withdraw" />
+          <ScalarProperty Name="Deposit" ColumnName="Deposit" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Transfer_Details_Deposit">
+      <EntityTypeMapping TypeName="BankModel.Transfer_Details_Deposit">
+        <MappingFragment StoreEntitySet="Transfer_Details_Deposit">
+          <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+          <ScalarProperty Name="Acc_No" ColumnName="Acc_No" />
+          <ScalarProperty Name="Ben_AccNo" ColumnName="Ben_AccNo" />
+          <ScalarProperty Name="Transaction_Type" ColumnName="Transaction_Type" />
+          <ScalarProperty Name="Transaction_date" ColumnName="Transaction_date" />
+          <ScalarProperty Name="Maturity_Ins" ColumnName="Maturity_Ins" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Transfer_Details_Withdraw">
+      <EntityTypeMapping TypeName="BankModel.Transfer_Details_Withdraw">
+        <MappingFragment StoreEntitySet="Transfer_Details_Withdraw">
+          <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+          <ScalarProperty Name="Acc_No" ColumnName="Acc_No" />
+          <ScalarProperty Name="Ben_AccNo" ColumnName="Ben_AccNo" />
+          <ScalarProperty Name="Transaction_Type" ColumnName="Transaction_Type" />
+          <ScalarProperty Name="Transaction_date" ColumnName="Transaction_date" />
+          <ScalarProperty Name="Maturity_Ins" ColumnName="Maturity_Ins" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User_Details">
+      <EntityTypeMapping TypeName="BankModel.User_Details">
+        <MappingFragment StoreEntitySet="User_Details">
+          <ScalarProperty Name="Acc_No" ColumnName="Acc_No" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Fname" ColumnName="Fname" />
+          <ScalarProperty Name="Mname" ColumnName="Mname" />
+          <ScalarProperty Name="Lname" ColumnName="Lname" />
+          <ScalarProperty Name="MobNo" ColumnName="MobNo" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Aadhar_No" ColumnName="Aadhar_No" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="AddressL1" ColumnName="AddressL1" />
+          <ScalarProperty Name="AddressL2" ColumnName="AddressL2" />
+          <ScalarProperty Name="Landmark" ColumnName="Landmark" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Pincode" ColumnName="Pincode" />
+          <ScalarProperty Name="P_Address1" ColumnName="P_Address1" />
+          <ScalarProperty Name="P_Address2" ColumnName="P_Address2" />
+          <ScalarProperty Name="P_Landmark" ColumnName="P_Landmark" />
+          <ScalarProperty Name="P_City" ColumnName="P_City" />
+          <ScalarProperty Name="P_State" ColumnName="P_State" />
+          <ScalarProperty Name="P_Pincode" ColumnName="P_Pincode" />
+          <ScalarProperty Name="OccupationType" ColumnName="OccupationType" />
+          <ScalarProperty Name="Src_Income" ColumnName="Src_Income" />
+          <ScalarProperty Name="GrossAnnual_Income" ColumnName="GrossAnnual_Income" />
+          <ScalarProperty Name="DebitCard" ColumnName="DebitCard" />
+          <ScalarProperty Name="NetBanking" ColumnName="NetBanking" />
+          <ScalarProperty Name="AccountType" ColumnName="AccountType" />
+          <ScalarProperty Name="Branch_Name" ColumnName="Branch_Name" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Ref_ID" ColumnName="Ref_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserAccounts">
+      <EntityTypeMapping TypeName="BankModel.UserAccount">
+        <MappingFragment StoreEntitySet="UserAccount">
+          <ScalarProperty Name="Acc_No" ColumnName="Acc_No" />
+          <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+          <ScalarProperty Name="Login_Password" ColumnName="Login_Password" />
+          <ScalarProperty Name="Transaction_Password" ColumnName="Transaction_Password" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+          <ScalarProperty Name="Acc_Status" ColumnName="Acc_Status" />
+          <ScalarProperty Name="Login_Attempts" ColumnName="Login_Attempts" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_Admin_Approve" FunctionName="BankModel.Store.sp_Admin_Approve" />
+    <FunctionImportMapping FunctionImportName="sp_Admin_Login" FunctionName="BankModel.Store.sp_Admin_Login">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BankModel.sp_Admin_Login_Result">
+          <ScalarProperty Name="PSNo" ColumnName="PSNo" />
+          <ScalarProperty Name="AdminName" ColumnName="AdminName" />
+          <ScalarProperty Name="Admin_Password" ColumnName="Admin_Password" />
+          <ScalarProperty Name="Contact_No" ColumnName="Contact_No" />
+          <ScalarProperty Name="AdminEmail" ColumnName="AdminEmail" />
+          <ScalarProperty Name="Acc_Status" ColumnName="Acc_Status" />
+          <ScalarProperty Name="Login_Attempts" ColumnName="Login_Attempts" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_Admin_Logout" FunctionName="BankModel.Store.sp_Admin_Logout" />
+    <FunctionImportMapping FunctionImportName="sp_Admin_Reject" FunctionName="BankModel.Store.sp_Admin_Reject" />
+    <FunctionImportMapping FunctionImportName="sp_Admin_Reset_Password" FunctionName="BankModel.Store.sp_Admin_Reset_Password" />
+    <FunctionImportMapping FunctionImportName="sp_Balance_Update" FunctionName="BankModel.Store.sp_Balance_Update" />
+    <FunctionImportMapping FunctionImportName="sp_Balance_Update_Unsuccessful" FunctionName="BankModel.Store.sp_Balance_Update_Unsuccessful" />
+    <FunctionImportMapping FunctionImportName="sp_Generate_RefID" FunctionName="BankModel.Store.sp_Generate_RefID" />
+    <FunctionImportMapping FunctionImportName="sp_Login" FunctionName="BankModel.Store.sp_Login">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BankModel.sp_Login_Result">
+          <ScalarProperty Name="Acc_No" ColumnName="Acc_No" />
+          <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+          <ScalarProperty Name="Login_Password" ColumnName="Login_Password" />
+          <ScalarProperty Name="Transaction_Password" ColumnName="Transaction_Password" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+          <ScalarProperty Name="Acc_Status" ColumnName="Acc_Status" />
+          <ScalarProperty Name="Login_Attempts" ColumnName="Login_Attempts" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_Logout" FunctionName="BankModel.Store.sp_Logout" />
+    <FunctionImportMapping FunctionImportName="sp_Ref_ID" FunctionName="BankModel.Store.sp_Ref_ID" />
+    <FunctionImportMapping FunctionImportName="sp_Reset_Pass_ByUserID" FunctionName="BankModel.Store.sp_Reset_Pass_ByUserID" />
+    <FunctionImportMapping FunctionImportName="sp_Reset_Password" FunctionName="BankModel.Store.sp_Reset_Password" />
+    <FunctionImportMapping FunctionImportName="sp_SessionLogin" FunctionName="BankModel.Store.sp_SessionLogin" />
+    <FunctionImportMapping FunctionImportName="sp_SessionLogout" FunctionName="BankModel.Store.sp_SessionLogout" />
+    <FunctionImportMapping FunctionImportName="sp_Transfer" FunctionName="BankModel.Store.sp_Transfer" />
+    <FunctionImportMapping FunctionImportName="sp_Transfer_Updates" FunctionName="BankModel.Store.sp_Transfer_Updates" />
+    <FunctionImportMapping FunctionImportName="usp_RandomPassword" FunctionName="BankModel.Store.usp_RandomPassword" />
+  </EntityContainerMapping>
+</Mapping>

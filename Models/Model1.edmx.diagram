@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="01afc9a3b45540398dba8d5867766e32" Name="Diagram1">
+        <EntityTypeShape EntityType="BankModel.Admin" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BankModel.Beneficiary" Width="1.5" PointX="5.25" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BankModel.IFSC" Width="1.5" PointX="0.75" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BankModel.Session" Width="1.5" PointX="5.25" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BankModel.Transfer_Details_All" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BankModel.Transfer_Details_Deposit" Width="1.5" PointX="5.25" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BankModel.Transfer_Details_Withdraw" Width="1.5" PointX="5.25" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BankModel.User_Details" Width="1.5" PointX="3" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BankModel.UserAccount" Width="1.5" PointX="5.25" PointY="15.25" IsExpanded="true" />
+        <AssociationConnector Association="BankModel.FK__Beneficia__User___33D4B598" ManuallyRouted="false" />
+        <AssociationConnector Association="BankModel.FK__User_Deta__Branc__29572725" ManuallyRouted="false" />
+        <AssociationConnector Association="BankModel.FK__Session__Acc_No__4BAC3F29" ManuallyRouted="false" />
+        <AssociationConnector Association="BankModel.FK__Transfer___Ben_A__3B75D760" ManuallyRouted="false" />
+        <AssociationConnector Association="BankModel.FK__Transfer___Acc_N__36B12243" ManuallyRouted="false" />
+        <AssociationConnector Association="BankModel.FK__UserAccou__Acc_N__2E1BDC42" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

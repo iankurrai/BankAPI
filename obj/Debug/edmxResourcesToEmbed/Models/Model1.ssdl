@@ -1,0 +1,316 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BankModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="PSNo" />
+    </Key>
+    <Property Name="PSNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AdminName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Admin_Password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Contact_No" Type="bigint" Nullable="false" />
+    <Property Name="AdminEmail" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Acc_Status" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Login_Attempts" Type="int" />
+  </EntityType>
+  <EntityType Name="Beneficiary">
+    <Key>
+      <PropertyRef Name="Ben_AccNo" />
+    </Key>
+    <Property Name="Ben_AccNo" Type="int" Nullable="false" />
+    <Property Name="User_AccNo" Type="int" Nullable="false" />
+    <Property Name="Ben_Name" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Ben_NickName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Ben_Banktype" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="IFSC_code" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="IFSC">
+    <Key>
+      <PropertyRef Name="Branch_Name" />
+    </Key>
+    <Property Name="Branch_Name" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="IFSC_code" Type="varchar" MaxLength="11" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Session">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Acc_No" Type="int" Nullable="false" />
+    <Property Name="Session_Login" Type="datetime" />
+    <Property Name="Session_Logout" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Transfer_Details_All">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TransactionID" Type="varchar" MaxLength="50" />
+    <Property Name="Acc_No" Type="int" Nullable="false" />
+    <Property Name="Ben_AccNo" Type="int" Nullable="false" />
+    <Property Name="Transaction_Type" Type="varchar" MaxLength="6" Nullable="false" />
+    <Property Name="Transaction_date" Type="datetime" Nullable="false" />
+    <Property Name="Maturity_Ins" Type="datetime" />
+    <Property Name="Remark" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Withdraw" Type="money" />
+    <Property Name="Deposit" Type="money" />
+    <Property Name="status" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Balance" Type="money" />
+  </EntityType>
+  <EntityType Name="Transfer_Details_Deposit">
+    <Key>
+      <PropertyRef Name="TransactionID" />
+    </Key>
+    <Property Name="TransactionID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Acc_No" Type="int" Nullable="false" />
+    <Property Name="Ben_AccNo" Type="int" Nullable="false" />
+    <Property Name="Transaction_Type" Type="varchar" MaxLength="6" Nullable="false" />
+    <Property Name="Transaction_date" Type="datetime" Nullable="false" />
+    <Property Name="Maturity_Ins" Type="datetime" />
+    <Property Name="Remark" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Amount" Type="money" Nullable="false" />
+    <Property Name="status" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Balance" Type="money" />
+  </EntityType>
+  <EntityType Name="Transfer_Details_Withdraw">
+    <Key>
+      <PropertyRef Name="TransactionID" />
+    </Key>
+    <Property Name="TransactionID" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Acc_No" Type="int" Nullable="false" />
+    <Property Name="Ben_AccNo" Type="int" Nullable="false" />
+    <Property Name="Transaction_Type" Type="varchar" MaxLength="6" Nullable="false" />
+    <Property Name="Transaction_date" Type="datetime" Nullable="false" />
+    <Property Name="Maturity_Ins" Type="datetime" />
+    <Property Name="Remark" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Amount" Type="money" Nullable="false" />
+    <Property Name="status" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Balance" Type="money" />
+  </EntityType>
+  <EntityType Name="User_Details">
+    <Key>
+      <PropertyRef Name="Acc_No" />
+    </Key>
+    <Property Name="Acc_No" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="Fname" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Mname" Type="varchar" MaxLength="50" />
+    <Property Name="Lname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="MobNo" Type="bigint" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Aadhar_No" Type="bigint" Nullable="false" />
+    <Property Name="DOB" Type="date" Nullable="false" />
+    <Property Name="AddressL1" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="AddressL2" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Landmark" Type="varchar" MaxLength="100" />
+    <Property Name="City" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="State" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Pincode" Type="int" Nullable="false" />
+    <Property Name="P_Address1" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="P_Address2" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="P_Landmark" Type="varchar" MaxLength="100" />
+    <Property Name="P_City" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="P_State" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="P_Pincode" Type="int" Nullable="false" />
+    <Property Name="OccupationType" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Src_Income" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="GrossAnnual_Income" Type="money" Nullable="false" />
+    <Property Name="DebitCard" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="NetBanking" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="AccountType" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Branch_Name" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Status" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="Ref_ID" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="UserAccount">
+    <Key>
+      <PropertyRef Name="User_Id" />
+    </Key>
+    <Property Name="Acc_No" Type="int" Nullable="false" />
+    <Property Name="User_Id" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Login_Password" Type="varchar" MaxLength="50" />
+    <Property Name="Transaction_Password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Balance" Type="money" Nullable="false" />
+    <Property Name="Acc_Status" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Login_Attempts" Type="int" />
+  </EntityType>
+  <Association Name="FK__Beneficia__User___33D4B598">
+    <End Role="User_Details" Type="Self.User_Details" Multiplicity="1" />
+    <End Role="Beneficiary" Type="Self.Beneficiary" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User_Details">
+        <PropertyRef Name="Acc_No" />
+      </Principal>
+      <Dependent Role="Beneficiary">
+        <PropertyRef Name="User_AccNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Session__Acc_No__4BAC3F29">
+    <End Role="User_Details" Type="Self.User_Details" Multiplicity="1" />
+    <End Role="Session" Type="Self.Session" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User_Details">
+        <PropertyRef Name="Acc_No" />
+      </Principal>
+      <Dependent Role="Session">
+        <PropertyRef Name="Acc_No" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Transfer___Acc_N__36B12243">
+    <End Role="User_Details" Type="Self.User_Details" Multiplicity="1" />
+    <End Role="Transfer_Details_Withdraw" Type="Self.Transfer_Details_Withdraw" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User_Details">
+        <PropertyRef Name="Acc_No" />
+      </Principal>
+      <Dependent Role="Transfer_Details_Withdraw">
+        <PropertyRef Name="Acc_No" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Transfer___Ben_A__3B75D760">
+    <End Role="User_Details" Type="Self.User_Details" Multiplicity="1" />
+    <End Role="Transfer_Details_Deposit" Type="Self.Transfer_Details_Deposit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User_Details">
+        <PropertyRef Name="Acc_No" />
+      </Principal>
+      <Dependent Role="Transfer_Details_Deposit">
+        <PropertyRef Name="Ben_AccNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__User_Deta__Branc__29572725">
+    <End Role="IFSC" Type="Self.IFSC" Multiplicity="1" />
+    <End Role="User_Details" Type="Self.User_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="IFSC">
+        <PropertyRef Name="Branch_Name" />
+      </Principal>
+      <Dependent Role="User_Details">
+        <PropertyRef Name="Branch_Name" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UserAccou__Acc_N__2E1BDC42">
+    <End Role="User_Details" Type="Self.User_Details" Multiplicity="1" />
+    <End Role="UserAccount" Type="Self.UserAccount" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User_Details">
+        <PropertyRef Name="Acc_No" />
+      </Principal>
+      <Dependent Role="UserAccount">
+        <PropertyRef Name="Acc_No" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="sp_Admin_Approve" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Acc_No" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_Admin_Login" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PSNo" Type="int" Mode="In" />
+    <Parameter Name="Admin_password" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_Admin_Logout" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PSNo" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_Admin_Reject" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Acc_No" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_Admin_Reset_Password" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PSNo" Type="int" Mode="In" />
+    <Parameter Name="Admin_Pass" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_Balance_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Tran_id" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_Balance_Update_Unsuccessful" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Tran_id" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_Generate_RefID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Acc_No" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_Login" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="user_id" Type="varchar" Mode="In" />
+    <Parameter Name="password" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_Logout" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="user_id" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_Ref_ID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="sp_Reset_Pass_ByUserID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="User_id" Type="varchar" Mode="In" />
+    <Parameter Name="Login_Pass" Type="varchar" Mode="In" />
+    <Parameter Name="Transaction_Pass" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_Reset_Password" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Acc_No" Type="int" Mode="In" />
+    <Parameter Name="Login_Pass" Type="nvarchar" Mode="In" />
+    <Parameter Name="Transaction_Pass" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_SessionLogin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Acc_No" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_SessionLogout" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Acc_No" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_Transfer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Tran_ID" Type="varchar" Mode="In" />
+    <Parameter Name="Acc_No" Type="int" Mode="In" />
+    <Parameter Name="Ben_AccNo" Type="int" Mode="In" />
+    <Parameter Name="Tran_type" Type="varchar" Mode="In" />
+    <Parameter Name="Maturity" Type="varchar" Mode="In" />
+    <Parameter Name="Remark" Type="varchar" Mode="In" />
+    <Parameter Name="Amount" Type="money" Mode="In" />
+  </Function>
+  <Function Name="sp_Transfer_Updates" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Acc_No" Type="int" Mode="In" />
+    <Parameter Name="Ben_AccNo" Type="int" Mode="In" />
+    <Parameter Name="Tran_type" Type="varchar" Mode="In" />
+    <Parameter Name="Tran_date" Type="datetime" Mode="In" />
+    <Parameter Name="Maturity" Type="datetime" Mode="In" />
+    <Parameter Name="Remark" Type="varchar" Mode="In" />
+    <Parameter Name="Amount" Type="money" Mode="In" />
+  </Function>
+  <Function Name="usp_RandomPassword" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="password" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <EntityContainer Name="BankModelStoreContainer">
+    <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Beneficiary" EntityType="Self.Beneficiary" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="IFSC" EntityType="Self.IFSC" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Session" EntityType="Self.Session" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Transfer_Details_All" EntityType="Self.Transfer_Details_All" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Transfer_Details_Deposit" EntityType="Self.Transfer_Details_Deposit" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Transfer_Details_Withdraw" EntityType="Self.Transfer_Details_Withdraw" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User_Details" EntityType="Self.User_Details" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserAccount" EntityType="Self.UserAccount" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Beneficia__User___33D4B598" Association="Self.FK__Beneficia__User___33D4B598">
+      <End Role="User_Details" EntitySet="User_Details" />
+      <End Role="Beneficiary" EntitySet="Beneficiary" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Session__Acc_No__4BAC3F29" Association="Self.FK__Session__Acc_No__4BAC3F29">
+      <End Role="User_Details" EntitySet="User_Details" />
+      <End Role="Session" EntitySet="Session" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Transfer___Acc_N__36B12243" Association="Self.FK__Transfer___Acc_N__36B12243">
+      <End Role="User_Details" EntitySet="User_Details" />
+      <End Role="Transfer_Details_Withdraw" EntitySet="Transfer_Details_Withdraw" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Transfer___Ben_A__3B75D760" Association="Self.FK__Transfer___Ben_A__3B75D760">
+      <End Role="User_Details" EntitySet="User_Details" />
+      <End Role="Transfer_Details_Deposit" EntitySet="Transfer_Details_Deposit" />
+    </AssociationSet>
+    <AssociationSet Name="FK__User_Deta__Branc__29572725" Association="Self.FK__User_Deta__Branc__29572725">
+      <End Role="IFSC" EntitySet="IFSC" />
+      <End Role="User_Details" EntitySet="User_Details" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UserAccou__Acc_N__2E1BDC42" Association="Self.FK__UserAccou__Acc_N__2E1BDC42">
+      <End Role="User_Details" EntitySet="User_Details" />
+      <End Role="UserAccount" EntitySet="UserAccount" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
